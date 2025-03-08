@@ -1,5 +1,5 @@
-module github.com/justmike1/goperset
+module github.com/axilock/goperset
 
-go 1.21.0
+go 1.24.0
 
 require github.com/opentracing/opentracing-go v1.2.0

@@ -3,14 +3,13 @@ package goperset_test
 import (
 	"context"
 	"fmt"
-	"github.com/justmike1/goperset"
 	"os"
 	"testing"
+
+	"github.com/axilock/goperset"
 )
 
-var (
-	basePath = getEnv("SUPERSET_BASE_PATH", "https://superset.domain.net/")
-)
+var basePath = getEnv("SUPERSET_BASE_PATH", "https://superset.domain.net/")
 
 func getEnv(key, fallback string) string {
 	if value, ok := os.LookupEnv(key); ok {
