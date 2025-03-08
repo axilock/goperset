@@ -133,6 +133,20 @@ type GetChart struct {
 	Pk int `json:"pk"`
 }
 
+type Query struct {
+	Filters []FilterDetail `json:"filters"`
+}
+
+type FilterDetail struct {
+	Col string `json:"col"`
+	Op  string `json:"op"`
+	Val string `json:"val"`
+}
+
+type QueriesFilter struct {
+	Queries []Query `json:"queries"`
+}
+
 type ChatData struct {
 	Result []struct {
 		Data []struct {

@@ -77,7 +77,7 @@ func CreateChart(client *Goperset, tokens ClientToken, payload DatasetPayload) (
 	return body, nil
 }
 
-func GetChartData(client *Goperset, tokens ClientToken, payload GetChart) ([]byte, error) {
+func GetChartData(client *Goperset, tokens ClientToken, payload GetChart, query QueriesFilter) ([]byte, error) {
 	body, err := ClientResty(client, tokens, "application/json", "GET", ChartDataEndpoint(payload.Pk), payload)
 	if err != nil {
 		return nil, err
