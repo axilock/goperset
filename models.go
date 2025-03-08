@@ -133,6 +133,19 @@ type GetChart struct {
 	Pk int `json:"pk"`
 }
 
+type ChatData struct {
+	Result []struct {
+		Data []struct {
+			RepoID      int    `json:"repo_id"`
+			RepoName    string `json:"repo_name"`
+			SecretCount int    `json:"secret_count"`
+		} `json:"data"`
+		ResultFormat    string `json:"result_format"`
+		AppliedFilters  []any  `json:"applied_filters"`
+		RejectedFilters []any  `json:"rejected_filters"`
+	} `json:"result"`
+}
+
 type EmbedPayload struct {
 	AllowedDomains *[]string `json:"allowed_domains"`
 }
