@@ -1,5 +1,7 @@
 package goperset
 
+import "fmt"
+
 // Secure Endpoint
 const (
 	SecurityController   = "/api/v1/security/"
@@ -52,15 +54,23 @@ const (
 )
 
 // Chart Endpoints
-const (
-	ChartController             = "/api/v1/chart/"
-	ChartInfoEndpoint           = ChartController + "_info"
-	ChartDataEndpoint           = ChartController + "data"
-	ExportChartEndpoint         = ChartController + "export/"
-	CHartFavoriteStatusEndpoint = ChartController + "favorite_status/"
-	ImportChartEndpoint         = ChartController + "import/"
-	RelatedChartEndpoint        = ChartController + "related/"
-)
+var ChartController = "/api/v1/chart/"
+
+func chartPath(pk int, s string) string {
+	return fmt.Sprintf("%s/%d/%s", ChartController, pk, s)
+}
+
+func ChartDataEndpoint(chartID int) string {
+	return chartPath(chartID, "data")
+}
+
+func ChartFavoriteStatusEndpointWithID(chartID int) string {
+	return chartPath(chartID, "favorite_status")
+}
+
+func RelatedChartEndpointWithID(chartID int) string {
+	return chartPath(chartID, "related")
+}
 
 // Advanced Data Type Endpoints
 const (

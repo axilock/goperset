@@ -129,6 +129,10 @@ type ChartPayload struct {
 	VizType                *[]string `json:"viz_type"`
 }
 
+type GetChart struct {
+	Pk int `json:"pk"`
+}
+
 type EmbedPayload struct {
 	AllowedDomains *[]string `json:"allowed_domains"`
 }
